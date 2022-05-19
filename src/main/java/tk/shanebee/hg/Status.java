@@ -48,28 +48,17 @@ public enum Status {
 	final Language lang = HG.getPlugin().getLang();
 
 	public String getName() {
-        switch (this) {
-            case RUNNING:
-                return Util.getColString(lang.status_running);
-            case STOPPED:
-                return Util.getColString(lang.status_stopped);
-            case READY:
-                return Util.getColString(lang.status_ready);
-            case WAITING:
-                return Util.getColString(lang.status_waiting);
-            case BROKEN:
-                return Util.getColString(lang.status_broken);
-            case ROLLBACK:
-                return Util.getColString(lang.status_rollback);
-            case NOTREADY:
-                return Util.getColString(lang.status_not_ready);
-            case BEGINNING:
-                return Util.getColString(lang.status_beginning);
-            case COUNTDOWN:
-                return Util.getColString(lang.status_countdown);
-            default:
-                return Util.getColString("&cERROR!");
-        }
+		return switch (this) {
+			case RUNNING -> Util.getColString(lang.status_running);
+			case STOPPED -> Util.getColString(lang.status_stopped);
+			case READY -> Util.getColString(lang.status_ready);
+			case WAITING -> Util.getColString(lang.status_waiting);
+			case BROKEN -> Util.getColString(lang.status_broken);
+			case ROLLBACK -> Util.getColString(lang.status_rollback);
+			case NOTREADY -> Util.getColString(lang.status_not_ready);
+			case BEGINNING -> Util.getColString(lang.status_beginning);
+			case COUNTDOWN -> Util.getColString(lang.status_countdown);
+		};
 	}
 
 }
