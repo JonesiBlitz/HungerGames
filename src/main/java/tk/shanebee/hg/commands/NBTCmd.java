@@ -10,38 +10,35 @@ import tk.shanebee.hg.util.Util;
 
 public class NBTCmd extends BaseCmd {
 
-	private NBTApi api;
+  private NBTApi api;
 
-	public NBTCmd() {
-		forcePlayer = true;
-		cmdName = "nbt";
-		forceInGame = false;
-		argLength = 1;
-		usage = "";
-		api = plugin.getNbtApi();
-	}
+  public NBTCmd() {
+    forcePlayer = true;
+    cmdName = "nbt";
+    forceInGame = false;
+    argLength = 1;
+    usage = "";
+    api = plugin.getNbtApi();
+  }
 
-
-	@Override
-	public boolean run() {
-		Player player = (Player) sender;
-		CommandSender console = Bukkit.getConsoleSender();
-		if (player.getInventory().getItemInMainHand().getType() != Material.AIR) {
-			ItemStack item = player.getInventory().getItemInMainHand();
-			Material type = item.getType();
-			Util.scm(player, "&3NBT:");
-			String nbtString = api.getNBT(item);
-			if (nbtString == null) {
-				Util.scm(player, "&cNO NBT FOUND!");
-			} else {
-				Util.scm(player, type + " " + item.getAmount() + " data:" + nbtString.replace(" ", "~"));
-				Util.scm(player, "&6NBT String also sent to console for easy copy/pasting");
-				Util.scm(console, "&3NBT string from &b" + player.getName() + "&3:");
-                System.out.println(type + " " + item.getAmount() + " data:" + nbtString.replace(" ", "~"));
-			}
-
-		}
-		return true;
-	}
-
+  @Override
+  public boolean run() {
+    Player player = (Player) sender;
+    CommandSender console = Bukkit.getConsoleSender();
+    if (player.getInventory().getItemInMainHand().getType() != Material.AIR) {
+      ItemStack item = player.getInventory().getItemInMainHand();
+      Material type = item.getType();
+      Util.scm(player, "&3NBT:");
+      String nbtString = api.getNBT(item);
+      if (nbtString == null) {
+        Util.scm(player, "&cNO NBT FOUND!");
+      } else {
+        Util.scm(player, type + " " + item.getAmount() + " data:" + nbtString.replace(" ", "~"));
+        Util.scm(player, "&6NBT String also sent to console for easy copy/pasting");
+        Util.scm(console, "&3NBT string from &b" + player.getName() + "&3:");
+        System.out.println(type + " " + item.getAmount() + " data:" + nbtString.replace(" ", "~"));
+      }
+    }
+    return true;
+  }
 }

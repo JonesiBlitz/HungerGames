@@ -7,57 +7,65 @@ import tk.shanebee.hg.game.Game;
 
 /**
  * Called when a player opens an empty chest in the game
- * <p>This will initiate the chest loading its contents</p>
+ *
+ * <p>This will initiate the chest loading its contents
  */
 public class ChestOpenEvent extends Event {
 
-	private Game game;
-	private Block block;
-	private boolean bonus;
+  private Game game;
+  private Block block;
+  private boolean bonus;
 
-	/** Create a new player open chest event
-	 * @param game The game this is happening in
-	 * @param block The block that is opening
-	 * @param bonus If the chest is a bonus chest
-	 */
-	public ChestOpenEvent(Game game, Block block, boolean bonus) {
-		this.game = game;
-		this.block = block;
-		this.bonus = bonus;
-	}
+  /**
+   * Create a new player open chest event
+   *
+   * @param game The game this is happening in
+   * @param block The block that is opening
+   * @param bonus If the chest is a bonus chest
+   */
+  public ChestOpenEvent(Game game, Block block, boolean bonus) {
+    this.game = game;
+    this.block = block;
+    this.bonus = bonus;
+  }
 
-	/** Get the game in this event
-	 * @return The game for this event
-	 */
-	public Game getGame() {
-		return game;
-	}
+  /**
+   * Get the game in this event
+   *
+   * @return The game for this event
+   */
+  public Game getGame() {
+    return game;
+  }
 
-	/** Get the chest that has been opened
-	 * @return The chest in the event
-	 */
-	public Block getChest() {
-		return block;
-	}
+  /**
+   * Get the chest that has been opened
+   *
+   * @return The chest in the event
+   */
+  public Block getChest() {
+    return block;
+  }
 
-	/** Check if this chest is a bonus chest
-	 * @return True if bonus chest
-	 */
-	public boolean isBonus() {
-		return bonus;
-	}
-	
-	private static final HandlerList handlers = new HandlerList();
+  /**
+   * Check if this chest is a bonus chest
+   *
+   * @return True if bonus chest
+   */
+  public boolean isBonus() {
+    return bonus;
+  }
 
-	@SuppressWarnings("NullableProblems")
-	@Override
-	public HandlerList getHandlers() {
-	    return handlers;
-	}
+  private static final HandlerList handlers = new HandlerList();
 
-	@SuppressWarnings("unused")
-	public static HandlerList getHandlerList() {
-	    return handlers;
-	}
-	
+  @SuppressWarnings("NullableProblems")
+  @Override
+  public HandlerList getHandlers() {
+    return handlers;
+  }
+
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
 }

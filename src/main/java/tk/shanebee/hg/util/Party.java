@@ -1,17 +1,15 @@
 package tk.shanebee.hg.util;
 
-import org.bukkit.entity.Player;
-
 import java.util.List;
+import org.bukkit.entity.Player;
 
 public interface Party {
 
-    boolean hasParty(Player p);
+  boolean hasParty(Player p);
 
-    int partySize(Player p);
+  int partySize(Player p);
 
-    boolean isOwner(Player p);
+  boolean isOwner(Player p);
 
-    List<Player> getMembers(Player owner);
-
+  List<Player> getMembers(Player owner);
 }

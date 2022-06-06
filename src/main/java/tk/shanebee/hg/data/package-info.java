@@ -1,4 +1,2 @@
-/**
- * Game data holders
- */
+/** Game data holders */
 package tk.shanebee.hg.data;

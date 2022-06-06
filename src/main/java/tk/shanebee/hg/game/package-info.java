@@ -1,4 +1,2 @@
-/**
- * General Game package
- */
+/** General Game package */
 package tk.shanebee.hg.game;

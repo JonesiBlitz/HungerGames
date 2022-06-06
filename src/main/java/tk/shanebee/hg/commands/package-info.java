@@ -1,4 +1,2 @@
-/**
- * Plugin commands <b>Internal Use Only</b>
- */
+/** Plugin commands <b>Internal Use Only</b> */
 package tk.shanebee.hg.commands;

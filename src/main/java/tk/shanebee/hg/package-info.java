@@ -1,4 +1,2 @@
-/**
- * General HungerGames package
- */
+/** General HungerGames package */
 package tk.shanebee.hg;
