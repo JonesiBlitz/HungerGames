@@ -27,9 +27,9 @@ import tk.shanebee.hg.util.Util;
 /** General data handler for the plugin */
 public class ArenaConfig {
 
+  private final HG plugin;
   private FileConfiguration arenadat = null;
   private File customConfigFile = null;
-  private final HG plugin;
 
   public ArenaConfig(HG plugin) {
     this.plugin = plugin;

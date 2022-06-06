@@ -25,19 +25,17 @@ import tk.shanebee.hg.util.Vault;
 /** Data class for holding a {@link Game Game's} players */
 public class GamePlayerData extends Data {
 
-  private final PlayerManager playerManager;
-  private final SpectatorGUI spectatorGUI;
-
   // Player Lists
   final List<UUID> players = new ArrayList<>();
   final List<UUID> spectators = new ArrayList<>();
   // This list contains all players who have joined the arena
   // Will be used to broadcast messages even if a player is no longer in the game
   final List<UUID> allPlayers = new ArrayList<>();
-
   // Data lists
   final Map<Player, Integer> kills = new HashMap<>();
   final Map<String, Team> teams = new HashMap<>();
+  private final PlayerManager playerManager;
+  private final SpectatorGUI spectatorGUI;
 
   protected GamePlayerData(Game game) {
     super(game);
@@ -46,6 +44,11 @@ public class GamePlayerData extends Data {
   }
 
   // TODO Data methods
+
+  // UTIL
+  private static double getRandomIntegerBetweenRange(double max) {
+    return (int) (Math.random() * ((max - (double) 0) + 1)) + (double) 0;
+  }
 
   /**
    * Get a list of all players in the game
@@ -74,11 +77,11 @@ public class GamePlayerData extends Data {
     spectators.clear();
   }
 
+  // Utility methods
+
   public SpectatorGUI getSpectatorGUI() {
     return spectatorGUI;
   }
-
-  // Utility methods
 
   private void kitHelp(Player player) {
     // Clear the chat a little, making this message easier to see
@@ -212,6 +215,8 @@ public class GamePlayerData extends Data {
     return true;
   }
 
+  // TODO Game methods
+
   /**
    * Add a kill to a player
    *
@@ -220,8 +225,6 @@ public class GamePlayerData extends Data {
   public void addKill(Player player) {
     this.kills.put(player, this.kills.get(player) + 1);
   }
-
-  // TODO Game methods
 
   /**
    * Join a player to the game
@@ -482,10 +485,5 @@ public class GamePlayerData extends Data {
 
   public boolean hasTeam(String name) {
     return teams.containsKey(name);
-  }
-
-  // UTIL
-  private static double getRandomIntegerBetweenRange(double max) {
-    return (int) (Math.random() * ((max - (double) 0) + 1)) + (double) 0;
   }
 }

@@ -21,6 +21,11 @@ public class GameEndEvent extends Event {
     this.death = death;
   }
 
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
   /**
    * Get the game that ended
    *
@@ -51,11 +56,6 @@ public class GameEndEvent extends Event {
   @SuppressWarnings("NullableProblems")
   @Override
   public HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @SuppressWarnings("unused")
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 }

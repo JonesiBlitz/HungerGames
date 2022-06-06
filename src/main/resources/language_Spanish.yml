@@ -176,14 +176,14 @@ cmd-lobbywall-set: '&a¡Los carteles se han creado correctamente!'
 cmd-lobbywall-notcorrect: '&c¡Los carteles no tienen el formato correcto!'
 cmd-lobbywall-format: '&cFormato: &6[cartel] &c[cartel] [cartel]'
 lobby-signs:
-    sign-1:
-        line-1: '&1&lHunger Games'
-        line-3: '&0&lClick para unirse'
-        line-4: 'Coste $&b<cost>'
-    sign-2:
-        line-1: '&1&lEstado: '
-    sign-3:
-        line-1: '&1&lEn curso'
+  sign-1:
+    line-1: '&1&lHunger Games'
+    line-3: '&0&lClick para unirse'
+    line-4: 'Coste $&b<cost>'
+  sign-2:
+    line-1: '&1&lEstado: '
+  sign-3:
+    line-1: '&1&lEn curso'
 
 ## Start
 cmd-start-starting: '&6¡&b<arena>&6 está empezando!'

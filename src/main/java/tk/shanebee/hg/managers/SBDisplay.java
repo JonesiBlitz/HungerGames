@@ -16,11 +16,11 @@ import tk.shanebee.hg.util.Util;
 /** General scoreboard manager */
 public class SBDisplay {
 
+  private final Game game;
   private ScoreboardManager manager;
   private Scoreboard board;
   private Objective ob;
   private HashMap<String, Scoreboard> score = new HashMap<>();
-  private final Game game;
 
   public SBDisplay(Game game) {
     this.manager = Bukkit.getScoreboardManager();

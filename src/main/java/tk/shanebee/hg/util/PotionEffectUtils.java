@@ -44,12 +44,7 @@ public enum PotionEffectUtils {
   BAD_OMEN("BAD_OMEN"),
   HERO_OF_THE_VILLAGE("HERO_OF_THE_VILLAGE");
 
-  private final String bukkit;
   private static final Map<String, String> BY_NAME = new HashMap<>();
-
-  PotionEffectUtils(String bukkit) {
-    this.bukkit = bukkit;
-  }
 
   static {
     for (PotionEffectUtils p : values()) {
@@ -60,6 +55,12 @@ public enum PotionEffectUtils {
         Util.warning("Missing PotionEffectType for '&7" + value + "&e' please let dev know.");
       }
     }
+  }
+
+  private final String bukkit;
+
+  PotionEffectUtils(String bukkit) {
+    this.bukkit = bukkit;
   }
 
   /**
@@ -96,15 +97,6 @@ public enum PotionEffectUtils {
    */
   public static PotionEffectType getByBukkit(String bukkit) {
     return PotionEffectType.getByName(bukkit.toUpperCase());
-  }
-
-  /**
-   * Get Bukkit key for PotionEffectType
-   *
-   * @return Bukkit key
-   */
-  public String getBukkitKey() {
-    return bukkit;
   }
 
   /**
@@ -156,5 +148,14 @@ public enum PotionEffectUtils {
               + " &7"
               + data);
     }
+  }
+
+  /**
+   * Get Bukkit key for PotionEffectType
+   *
+   * @return Bukkit key
+   */
+  public String getBukkitKey() {
+    return bukkit;
   }
 }

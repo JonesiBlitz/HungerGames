@@ -19,13 +19,10 @@ public class Leaderboard {
 
   private final HG plugin;
   private final Language lang;
-  private FileConfiguration leaderboardConfig;
-  private File config_file;
   private final Map<String, Integer> wins;
   private final Map<String, Integer> kills;
   private final Map<String, Integer> deaths;
   private final Map<String, Integer> gamesPlayed;
-
   private final List<String> sorted_players_wins;
   private final List<String> sorted_scores_wins;
   private final List<String> sorted_players_kills;
@@ -34,6 +31,8 @@ public class Leaderboard {
   private final List<String> sorted_scores_deaths;
   private final List<String> sorted_players_gamesPlayed;
   private final List<String> sorted_scores_gamesPlayed;
+  private FileConfiguration leaderboardConfig;
+  private File config_file;
 
   public Leaderboard(HG plugin) {
     this.plugin = plugin;
@@ -51,6 +50,19 @@ public class Leaderboard {
     sorted_players_gamesPlayed = new ArrayList<>();
     sorted_scores_gamesPlayed = new ArrayList<>();
     loadLeaderboard();
+  }
+
+  private static <K, V extends Comparable<? super V>>
+      SortedSet<Map.Entry<K, V>> entriesSortedByValues(Map<K, V> map) {
+    SortedSet<Map.Entry<K, V>> sortedEntries =
+        new TreeSet<>(
+            (Map.Entry<K, V> e2, Map.Entry<K, V> e1) -> {
+              int res = e1.getValue().compareTo(e2.getValue());
+              if (res == 0) return 1;
+              else return res;
+            });
+    sortedEntries.addAll(map.entrySet());
+    return sortedEntries;
   }
 
   /**
@@ -292,19 +304,6 @@ public class Leaderboard {
       scores.add(String.valueOf(score));
       players.add(player != null ? player : lang.lb_missing_player);
     }
-  }
-
-  private static <K, V extends Comparable<? super V>>
-      SortedSet<Map.Entry<K, V>> entriesSortedByValues(Map<K, V> map) {
-    SortedSet<Map.Entry<K, V>> sortedEntries =
-        new TreeSet<>(
-            (Map.Entry<K, V> e2, Map.Entry<K, V> e1) -> {
-              int res = e1.getValue().compareTo(e2.getValue());
-              if (res == 0) return 1;
-              else return res;
-            });
-    sortedEntries.addAll(map.entrySet());
-    return sortedEntries;
   }
 
   /** Stat types for leaderboards */

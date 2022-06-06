@@ -13,14 +13,14 @@ public class GameArenaData extends Data {
   final int timer;
   final int minPlayers;
   final int maxPlayers;
+  final List<Location> spawns;
+  final Board board;
   private final int roamTime;
   int cost;
-  final List<Location> spawns;
   Location exit;
   Status status;
   int chestRefillTime = 0;
   int chestRefillRepeat = 0;
-  final Board board;
 
   public GameArenaData(
       Game game,
@@ -148,6 +148,15 @@ public class GameArenaData extends Data {
   }
 
   /**
+   * Get the status of the game
+   *
+   * @return Status of the game
+   */
+  public Status getStatus() {
+    return this.status;
+  }
+
+  /**
    * Set the status of the game
    *
    * @param status Status to set
@@ -155,15 +164,6 @@ public class GameArenaData extends Data {
   public void setStatus(Status status) {
     this.status = status;
     game.gameBlockData.updateLobbyBlock();
-  }
-
-  /**
-   * Get the status of the game
-   *
-   * @return Status of the game
-   */
-  public Status getStatus() {
-    return this.status;
   }
 
   /**
@@ -185,6 +185,15 @@ public class GameArenaData extends Data {
   }
 
   /**
+   * Get the chest refill time
+   *
+   * @return The remaining time in the game which the chests will refill
+   */
+  public int getChestRefillTime() {
+    return this.chestRefillTime;
+  }
+
+  /**
    * Set the chest refill time
    *
    * @param time The remaining time in the game for the chests to refill
@@ -194,12 +203,12 @@ public class GameArenaData extends Data {
   }
 
   /**
-   * Get the chest refill time
+   * Get the chest refill repeat time
    *
-   * @return The remaining time in the game which the chests will refill
+   * @return The increment for chest refills
    */
-  public int getChestRefillTime() {
-    return this.chestRefillTime;
+  public int getChestRefillRepeat() {
+    return chestRefillRepeat;
   }
 
   /**
@@ -211,15 +220,6 @@ public class GameArenaData extends Data {
    */
   public void setChestRefillRepeat(int chestRefillRepeat) {
     this.chestRefillRepeat = chestRefillRepeat;
-  }
-
-  /**
-   * Get the chest refill repeat time
-   *
-   * @return The increment for chest refills
-   */
-  public int getChestRefillRepeat() {
-    return chestRefillRepeat;
   }
 
   /** Update scoreboards for players (including team scoreboards) */

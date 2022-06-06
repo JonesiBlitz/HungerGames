@@ -12,8 +12,8 @@ import tk.shanebee.hg.util.Util;
 /** Data holder for {@link BossBar BossBars} */
 public class GameBarData extends Data {
 
-  private BossBar bar;
   private final String title;
+  private BossBar bar;
 
   protected GameBarData(Game game) {
     super(game);

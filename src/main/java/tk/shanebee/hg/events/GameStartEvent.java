@@ -15,6 +15,11 @@ public class GameStartEvent extends Event {
     this.game = game;
   }
 
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
   /**
    * Get the game involved in this event
    *
@@ -27,11 +32,6 @@ public class GameStartEvent extends Event {
   @SuppressWarnings("NullableProblems")
   @Override
   public HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @SuppressWarnings("unused")
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 }

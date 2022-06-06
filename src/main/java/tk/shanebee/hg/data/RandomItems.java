@@ -11,10 +11,10 @@ import tk.shanebee.hg.util.Util;
 /** Handler for random items */
 public class RandomItems {
 
+  private final HG plugin;
+  public int size = 0;
   private FileConfiguration item = null;
   private File customConfigFile = null;
-  public int size = 0;
-  private final HG plugin;
 
   public RandomItems(HG plugin) {
     this.plugin = plugin;

@@ -32,9 +32,9 @@ import tk.shanebee.hg.data.Config;
 @SuppressWarnings("WeakerAccess")
 public class Util {
 
-  private static final Logger LOGGER = Bukkit.getLogger();
   public static final BlockFace[] faces =
       new BlockFace[] {BlockFace.EAST, BlockFace.WEST, BlockFace.NORTH, BlockFace.SOUTH};
+  private static final Logger LOGGER = Bukkit.getLogger();
   private static final Pattern HEX_PATTERN = Pattern.compile("<#([A-Fa-f0-9]){6}>");
 
   /**

@@ -22,17 +22,16 @@ import tk.shanebee.hg.util.*;
 /** <b>Main class for HungerGames</b> */
 public class HG extends JavaPlugin {
 
+  // Instances
+  private static HG plugin;
+  private static Party party = new NoParty();
   // Maps
   private Map<String, BaseCmd> cmds;
   private Map<UUID, PlayerSession> playerSession;
   private Map<Integer, ItemStack> items;
   private Map<Integer, ItemStack> bonusItems;
-
   // Lists
   private List<Game> games;
-
-  // Instances
-  private static HG plugin;
   private Config config;
   private Manager manager;
   private PlayerManager playerManager;
@@ -44,14 +43,24 @@ public class HG extends JavaPlugin {
   private ItemStackManager itemStackManager;
   private Leaderboard leaderboard;
   private MobManager mmMobManager;
-
-  private static Party party = new NoParty();
-
   // Mobs
   private MobConfig mobConfig;
 
   // NMS Nbt
   private NBTApi nbtApi;
+
+  /**
+   * Get the instance of this plugin
+   *
+   * @return This plugin
+   */
+  public static HG getPlugin() {
+    return plugin;
+  }
+
+  public static Party getParty() {
+    return party;
+  }
 
   @Override
   public void onEnable() {
@@ -307,15 +316,6 @@ public class HG extends JavaPlugin {
   }
 
   /**
-   * Get the instance of this plugin
-   *
-   * @return This plugin
-   */
-  public static HG getPlugin() {
-    return plugin;
-  }
-
-  /**
    * Get an instance of the RandomItems manager
    *
    * @return RandomItems manager
@@ -466,10 +466,6 @@ public class HG extends JavaPlugin {
    */
   public NBTApi getNbtApi() {
     return this.nbtApi;
-  }
-
-  public static Party getParty() {
-    return party;
   }
 
   /**

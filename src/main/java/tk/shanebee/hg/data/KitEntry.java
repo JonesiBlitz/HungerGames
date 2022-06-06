@@ -63,15 +63,6 @@ public class KitEntry {
   }
 
   /**
-   * Set the helmet for this kit entry
-   *
-   * @param helmet The helmet
-   */
-  public void setHelmet(ItemStack helmet) {
-    this.helm = helmet;
-  }
-
-  /**
    * Get the helmet for this kit entry
    *
    * @return The helmet
@@ -81,12 +72,12 @@ public class KitEntry {
   }
 
   /**
-   * Set the chestplate for this kit entry
+   * Set the helmet for this kit entry
    *
-   * @param chestplate The chestplate
+   * @param helmet The helmet
    */
-  public void setChestplate(ItemStack chestplate) {
-    this.chestplate = chestplate;
+  public void setHelmet(ItemStack helmet) {
+    this.helm = helmet;
   }
 
   /**
@@ -99,12 +90,12 @@ public class KitEntry {
   }
 
   /**
-   * Set the leggings for this kit entry
+   * Set the chestplate for this kit entry
    *
-   * @param leggings The leggings
+   * @param chestplate The chestplate
    */
-  public void setLeggings(ItemStack leggings) {
-    this.leggings = leggings;
+  public void setChestplate(ItemStack chestplate) {
+    this.chestplate = chestplate;
   }
 
   /**
@@ -117,12 +108,12 @@ public class KitEntry {
   }
 
   /**
-   * Set the boots for this kit entry
+   * Set the leggings for this kit entry
    *
-   * @param boots The boots
+   * @param leggings The leggings
    */
-  public void setBoots(ItemStack boots) {
-    this.boots = boots;
+  public void setLeggings(ItemStack leggings) {
+    this.leggings = leggings;
   }
 
   /**
@@ -135,12 +126,12 @@ public class KitEntry {
   }
 
   /**
-   * Set the potion effects for this kit entry
+   * Set the boots for this kit entry
    *
-   * @param potions List of potion effects
+   * @param boots The boots
    */
-  public void setPotions(ArrayList<PotionEffect> potions) {
-    this.potions = potions;
+  public void setBoots(ItemStack boots) {
+    this.boots = boots;
   }
 
   /**
@@ -162,6 +153,15 @@ public class KitEntry {
   }
 
   /**
+   * Set the potion effects for this kit entry
+   *
+   * @param potions List of potion effects
+   */
+  public void setPotions(ArrayList<PotionEffect> potions) {
+    this.potions = potions;
+  }
+
+  /**
    * Set the permission for this kit entry
    *
    * @param permission The permission
@@ -180,21 +180,21 @@ public class KitEntry {
   }
 
   /**
-   * Set the inventory contents for this kit entry
-   *
-   * @param items The inventory contents
-   */
-  public void setInventoryContents(ItemStack[] items) {
-    this.inventoryContents = items;
-  }
-
-  /**
    * Get the inventory contents for this kit entry
    *
    * @return The inventory contents
    */
   public ItemStack[] getInventoryContents() {
     return this.inventoryContents;
+  }
+
+  /**
+   * Set the inventory contents for this kit entry
+   *
+   * @param items The inventory contents
+   */
+  public void setInventoryContents(ItemStack[] items) {
+    this.inventoryContents = items;
   }
 
   /**

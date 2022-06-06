@@ -30,13 +30,12 @@ public class PlayerData implements Cloneable {
   private final GameMode mode;
   private final UUID uuid;
   private final Scoreboard scoreboard;
+  private final Game game;
   private Location previousLocation = null;
   private boolean online;
-
   // InGame data
   private Team team;
   private Team pendingTeam;
-  private final Game game;
 
   /**
    * New player pre-game data file
@@ -169,15 +168,6 @@ public class PlayerData implements Cloneable {
   }
 
   /**
-   * Set the previous location of the player
-   *
-   * @param previousLocation Location player was at before entering arena
-   */
-  public void setPreviousLocation(Location previousLocation) {
-    this.previousLocation = previousLocation;
-  }
-
-  /**
    * Get the previous location of the player
    *
    * @return Location player was at before entering arena
@@ -189,6 +179,15 @@ public class PlayerData implements Cloneable {
     } else {
       return null;
     }
+  }
+
+  /**
+   * Set the previous location of the player
+   *
+   * @param previousLocation Location player was at before entering arena
+   */
+  public void setPreviousLocation(Location previousLocation) {
+    this.previousLocation = previousLocation;
   }
 
   public boolean isOnline() {

@@ -11,8 +11,6 @@ import tk.shanebee.hg.game.GameArenaData;
 
 public class TimerTask implements Runnable {
 
-  private int timer = 0;
-  private int remainingtime;
   private final int teleportTimer;
   private final int borderCountdownStart;
   private final int borderCountdownEnd;
@@ -22,6 +20,8 @@ public class TimerTask implements Runnable {
   private final String end_min;
   private final String end_minsec;
   private final String end_sec;
+  private int timer = 0;
+  private int remainingtime;
 
   public TimerTask(Game g, int time) {
     this.remainingtime = time;

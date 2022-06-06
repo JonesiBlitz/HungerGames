@@ -20,6 +20,11 @@ public class PlayerLeaveGameEvent extends Event {
     this.death = death;
   }
 
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
   /**
    * Get the game the player left
    *
@@ -50,11 +55,6 @@ public class PlayerLeaveGameEvent extends Event {
 
   @Override
   public @NotNull HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @SuppressWarnings("unused")
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 }

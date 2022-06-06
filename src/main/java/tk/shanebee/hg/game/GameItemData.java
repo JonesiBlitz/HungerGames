@@ -19,21 +19,21 @@ public class GameItemData extends Data {
   }
 
   /**
-   * Set the items for this game
-   *
-   * @param items Map of items to set
-   */
-  public void setItems(Map<Integer, ItemStack> items) {
-    this.items = items;
-  }
-
-  /**
    * Get the items map for this game
    *
    * @return Map of items
    */
   public Map<Integer, ItemStack> getItems() {
     return this.items;
+  }
+
+  /**
+   * Set the items for this game
+   *
+   * @param items Map of items to set
+   */
+  public void setItems(Map<Integer, ItemStack> items) {
+    this.items = items;
   }
 
   /**
@@ -56,21 +56,21 @@ public class GameItemData extends Data {
   }
 
   /**
-   * Set the bonus items for this game to a new map
-   *
-   * @param items Map of bonus items
-   */
-  public void setBonusItems(Map<Integer, ItemStack> items) {
-    this.bonusItems = items;
-  }
-
-  /**
    * Get the bonus items map for this game
    *
    * @return Map of bonus items
    */
   public Map<Integer, ItemStack> getBonusItems() {
     return this.bonusItems;
+  }
+
+  /**
+   * Set the bonus items for this game to a new map
+   *
+   * @param items Map of bonus items
+   */
+  public void setBonusItems(Map<Integer, ItemStack> items) {
+    this.bonusItems = items;
   }
 
   /**

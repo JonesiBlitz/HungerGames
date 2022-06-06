@@ -32,19 +32,6 @@ public class Game {
 
   final HG plugin;
   final Language lang;
-
-  // Managers
-  KitManager kitManager;
-  private final MobManager mobManager;
-  private final PlayerManager playerManager;
-
-  // Task ID's here!
-  private SpawnerTask spawner;
-  private FreeRoamTask freeRoam;
-  private StartingTask starting;
-  private TimerTask timer;
-  private ChestDropTask chestDrop;
-
   // Data Objects
   final GameArenaData gameArenaData;
   final GameBarData bar;
@@ -53,6 +40,16 @@ public class Game {
   final GameItemData gameItemData;
   final GameCommandData gameCommandData;
   final GameBorderData gameBorderData;
+  private final MobManager mobManager;
+  private final PlayerManager playerManager;
+  // Managers
+  KitManager kitManager;
+  // Task ID's here!
+  private SpawnerTask spawner;
+  private FreeRoamTask freeRoam;
+  private StartingTask starting;
+  private TimerTask timer;
+  private ChestDropTask chestDrop;
 
   /**
    * Create a new game

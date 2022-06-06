@@ -11,16 +11,6 @@ import tk.shanebee.hg.util.Util;
 
 public abstract class BaseCmd {
 
-  HG plugin;
-  Language lang;
-  PlayerManager playerManager;
-  Manager gameManager;
-  ArenaConfig arenaConfig;
-
-  public BaseCmd() {
-    this.plugin = HG.getPlugin();
-  }
-
   public CommandSender sender;
   public String[] args;
   public String cmdName;
@@ -30,6 +20,15 @@ public abstract class BaseCmd {
   public boolean forceInRegion = false;
   public String usage = "";
   public Player player;
+  HG plugin;
+  Language lang;
+  PlayerManager playerManager;
+  Manager gameManager;
+  ArenaConfig arenaConfig;
+
+  public BaseCmd() {
+    this.plugin = HG.getPlugin();
+  }
 
   public void processCmd(HG plugin, CommandSender sender, String[] args) {
     this.sender = sender;

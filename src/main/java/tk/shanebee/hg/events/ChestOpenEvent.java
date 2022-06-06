@@ -12,6 +12,7 @@ import tk.shanebee.hg.game.Game;
  */
 public class ChestOpenEvent extends Event {
 
+  private static final HandlerList handlers = new HandlerList();
   private Game game;
   private Block block;
   private boolean bonus;
@@ -27,6 +28,11 @@ public class ChestOpenEvent extends Event {
     this.game = game;
     this.block = block;
     this.bonus = bonus;
+  }
+
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
   }
 
   /**
@@ -56,16 +62,9 @@ public class ChestOpenEvent extends Event {
     return bonus;
   }
 
-  private static final HandlerList handlers = new HandlerList();
-
   @SuppressWarnings("NullableProblems")
   @Override
   public HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @SuppressWarnings("unused")
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 }

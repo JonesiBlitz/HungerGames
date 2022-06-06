@@ -13,10 +13,10 @@ import tk.shanebee.hg.util.Util;
 
 public class StartingTask implements Runnable {
 
-  private int timer;
   private final int id;
   private final Game game;
   private final Language lang;
+  private int timer;
 
   public StartingTask(Game g) {
     this.timer = 30;

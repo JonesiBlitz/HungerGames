@@ -31,12 +31,7 @@ public enum PotionTypeUtils {
   TURTLE_MASTER("TURTLE_MASTER"),
   SLOW_FALLING("SLOW_FALLING");
 
-  private final String bukkit;
   private static final Map<String, String> BY_NAME = new HashMap<>();
-
-  PotionTypeUtils(String bukkit) {
-    this.bukkit = bukkit;
-  }
 
   static {
     for (PotionTypeUtils p : values()) {
@@ -47,6 +42,12 @@ public enum PotionTypeUtils {
         Util.warning("Missing PotionType for '&7" + value + "&e' please let dev know.");
       }
     }
+  }
+
+  private final String bukkit;
+
+  PotionTypeUtils(String bukkit) {
+    this.bukkit = bukkit;
   }
 
   /**

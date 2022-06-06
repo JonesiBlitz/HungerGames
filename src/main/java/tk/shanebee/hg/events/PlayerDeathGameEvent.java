@@ -21,6 +21,11 @@ public class PlayerDeathGameEvent extends PlayerDeathEvent {
     this.game = game;
   }
 
+  @NotNull
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
   /**
    * Get the game the player died in
    *
@@ -33,11 +38,6 @@ public class PlayerDeathGameEvent extends PlayerDeathEvent {
   @NotNull
   @Override
   public HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @NotNull
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 }

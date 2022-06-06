@@ -29,10 +29,10 @@ import tk.shanebee.hg.util.Util;
 public class ChestDrop implements Listener {
 
   private final FallingBlock fb;
-  private BlockState beforeBlock;
-  private Player invopener;
   private final Chunk c;
   private final PlayerManager playerManager;
+  private BlockState beforeBlock;
+  private Player invopener;
 
   public ChestDrop(FallingBlock fb) {
     this.fb = fb;

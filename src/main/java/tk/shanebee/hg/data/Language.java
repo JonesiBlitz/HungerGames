@@ -11,10 +11,7 @@ import tk.shanebee.hg.util.Util;
 /** Language handler for plugin messages */
 public class Language {
 
-  private FileConfiguration lang = null;
-  private File customLangFile = null;
   private final HG plugin;
-
   public String prefix;
   public String player_joined_game;
   public String player_left_game;
@@ -70,7 +67,6 @@ public class Language {
   public String status_not_ready;
   public String status_beginning;
   public String status_countdown;
-
   public String death_fallen;
   public String death_explosion;
   public String death_custom;
@@ -182,6 +178,8 @@ public class Language {
   public String check_ready_run;
   public String leave_game;
   public String force_start;
+  private FileConfiguration lang = null;
+  private File customLangFile = null;
 
   public Language(HG plugin) {
     this.plugin = plugin;

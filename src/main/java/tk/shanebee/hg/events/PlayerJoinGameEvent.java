@@ -20,6 +20,11 @@ public class PlayerJoinGameEvent extends Event implements Cancellable {
     this.isCancelled = false;
   }
 
+  @SuppressWarnings("unused")
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
   /**
    * Get the player that joined a game
    *
@@ -41,11 +46,6 @@ public class PlayerJoinGameEvent extends Event implements Cancellable {
   @SuppressWarnings("NullableProblems")
   @Override
   public HandlerList getHandlers() {
-    return handlers;
-  }
-
-  @SuppressWarnings("unused")
-  public static HandlerList getHandlerList() {
     return handlers;
   }
 
